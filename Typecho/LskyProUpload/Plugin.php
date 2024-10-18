@@ -11,12 +11,12 @@ use CURLFile;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 可以直接在编辑时点击上传按钮上传图片至兰空图床(LskyPro)，安装完成后先在插件设置中填写对应参数后再使用，若在使用过程中出现问题或者Bug请截图保存反馈至作者邮箱
+ * 本插件基于isYangs开发的LskyProUpload插件进行修改。插件使用方法详见：
  *
- * @package LskyProUpload
- * @author isYangs
+ * @package LskyProUpload-V2
+ * @author QuicatInt
  * @version 1.0.0
- * @link https://wpa.qq.com/wpa_jump_page?v=3&uin=750837279&site=qq&menu=yes
+ * @link 
  */
 
 class Plugin implements PluginInterface
@@ -39,7 +39,7 @@ class Plugin implements PluginInterface
 
     public static function config(Form $form)
     {
-        $desc = new Text('desc', NULL, '', '插件介绍：', '<p>本插件由isYangs基于泽泽站长的插件修改而来的 &nbsp;&nbsp; <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=isYangs@foxmail.com" target="_blank">点我反馈Bug</a> &nbsp;&nbsp; <a href="https://www.lsky.pro/" target="_blank">兰空官网</a></p>');
+        $desc = new Text('desc', NULL, '', '插件介绍：', '<p>本插件基于isYangs开发的LskyProUpload插件进行修改。&nbsp;&nbsp; <a href="https://blog.catseek.uk" target="_blank">插件使用方法</a>&nbsp;&nbsp; <a href="https://github.com/isYangs/LskyPro-Plugins" target="_blank">原插件地址</a> &nbsp;&nbsp; <a href="https://www.lsky.pro/" target="_blank">兰空官网</a></p>');
         $form->addInput($desc);
 
         $api = new Text('api', NULL, '', 'Api：', '只需填写域名包含 http 或 https 无需<code style="padding: 2px 4px; font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px;"> / </code>结尾<br><code style="padding: 2px 4px; font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px;">示例地址：https://lsky.pro</code>');
@@ -122,16 +122,8 @@ class Plugin implements PluginInterface
 
     public static function attachmentHandle(array $content): string
     {
-		$arr = unserialize($content['text']);
-		$text = strstr($content['text'],'.');
-		$ext = substr($text,1,3);
-        if (self::_isImage($ext)) {
 
-            return $content['attachment']->path ?? '';
-        }
-
-        $ret = explode(self::UPLOAD_DIR, $arr['path']);
-        return Common::url(self::UPLOAD_DIR . @$ret[1], Options::alloc()->siteUrl);
+        return $content['attachment']->path ?? '';  
     }
 
     private static function _getUploadDir($ext = ''): string
