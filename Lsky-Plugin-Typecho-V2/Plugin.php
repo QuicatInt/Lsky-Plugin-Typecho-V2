@@ -13,10 +13,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 本插件基于isYangs开发的LskyProUpload插件进行修改。插件使用方法详见：
  *
- * @package LskyProUpload-V2
+ * @package Lsky-Plugin-Typecho-V2
  * @author QuicatInt
  * @version 1.0.0
- * @link 
+ * @link https://blog.catseek.uk
  */
 
 class Plugin implements PluginInterface
