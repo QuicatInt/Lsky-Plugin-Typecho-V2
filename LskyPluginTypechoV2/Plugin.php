@@ -13,7 +13,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 本插件基于isYangs开发的LskyProUpload插件进行修改。插件使用方法详见Github及博客页面。
  *
- * @package Lsky-Plugin-Typecho-V2
+ * @package LskyPluginTypechoV2
  * @author QuicatInt
  * @version 1.0.0
  * @link https://blog.catseek.uk
@@ -22,7 +22,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 class Plugin implements PluginInterface
 {
     const UPLOAD_DIR  = '/usr/uploads';
-    const PLUGIN_NAME = 'Lsky-Plugin-Typecho-V2';
+    const PLUGIN_NAME = 'LskyPluginTypechoV2';
 
     public static function activate()
     {
