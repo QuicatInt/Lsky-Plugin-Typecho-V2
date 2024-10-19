@@ -1,5 +1,5 @@
 <?php
-namespace TypechoPlugin\Lsky-Plugin-Typecho-V2;
+namespace TypechoPlugin\LskyPluginTypechoV2;
 
 use Typecho\Plugin\PluginInterface;
 use Typecho\Widget\Helper\Form;
