@@ -39,7 +39,7 @@ class Plugin implements PluginInterface
 
     public static function config(Form $form)
     {
-        $desc = new Text('desc', NULL, '', '插件介绍：', '<p>本插件基于isYangs开发的LskyProUpload插件进行修改。&nbsp;&nbsp; <a href="https://blog.catseek.uk/index.php/archives/30/" target="_blank">插件使用方法</a>&nbsp;&nbsp; <a href="https://github.com/isYangs/LskyPro-Plugins" target="_blank">原插件地址</a> &nbsp;&nbsp; <a href="https://www.lsky.pro/" target="_blank">兰空官网</a></p>');
+        $desc = new Text('desc', NULL, '', '插件介绍：', '<p>本插件基于isYangs开发的LskyProUpload插件进行修改。&nbsp;&nbsp; <a href="https://blog.catseek.uk/archives/30.html" target="_blank">插件使用方法</a>&nbsp;&nbsp; <a href="https://github.com/isYangs/LskyPro-Plugins" target="_blank">原插件地址</a> &nbsp;&nbsp; <a href="https://www.lsky.pro/" target="_blank">兰空官网</a></p>');
         $form->addInput($desc);
 
         $api = new Text('api', NULL, '', 'Api：', '只需填写域名包含 http 或 https 无需<code style="padding: 2px 4px; font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px;"> / </code>结尾<br><code style="padding: 2px 4px; font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px;">示例地址：https://lsky.pro</code>');
